@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Users, Building, Briefcase, Coffee } from 'lucide-react';
+import { Phone, Mail, MapPin,Globe, Clock, Users, Building, Briefcase, Coffee } from 'lucide-react';
 import { Button } from '../Components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../Components/ui/Card';
 import { Label } from '../Components/ui/Label';
@@ -11,26 +11,24 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <header className="bg-white shadow-sm  sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Building className="h-8 w-8 text-blue-600" />
-              <Link to="/" className="text-2xl font-bold text-gray-900">
-                India Repz Travel
-              </Link>
+              <Globe className="h-8 w-8 text-blue-600" />
+              <h1 className="text-2xl font-bold text-gray-900">India Repz Travel</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="#home" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Home
               </Link>
-              <Link to="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="#services" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Services
               </Link>
               <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
                 About Us
               </Link>
-              <Link to="/contact" className="text-blue-600 font-medium">
+              <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -100,7 +98,7 @@ const ContactPage = () => {
                         required
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+                    <Button type="submit" className="w-full bg-blue-600 text-white hover:bg-blue-700">
                       Send Message
                     </Button>
                   </form>

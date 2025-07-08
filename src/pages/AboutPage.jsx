@@ -1,32 +1,30 @@
-// src/pages/AboutPage.jsx
 import { Users, Globe, Clock, Shield, TrendingUp, Award, Building, Heart, MapPin, Phone, Mail } from "lucide-react"
 import { Card,CardContent,CardDescription,CardHeader,CardTitle } from "../Components/ui/Card"
 import { Button } from "../Components/ui/Button"
 import { Badge } from "../Components/ui/Badge"
 
 import { Link } from "react-router-dom"
+import TravelSlideshow from "../Components/ui/TravelSlideshow"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+     <header className="bg-white shadow-sm  sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Globe className="h-8 w-8 text-blue-600" />
-              <Link to="/" className="text-2xl font-bold text-gray-900">
-                India Repz Travel
-              </Link>
+              <h1 className="text-2xl font-bold text-gray-900">India Repz Travel</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="#home" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Home
               </Link>
-              <Link to="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="#services" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Services
               </Link>
-              <Link to="/about" className="text-blue-600 font-medium">
+              <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
                 About Us
               </Link>
               <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
@@ -60,8 +58,8 @@ export default function AboutPage() {
 
       {/* Company Information */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center ">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Company Information</h2>
               <div className="space-y-4 text-gray-600">
@@ -88,11 +86,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="/placeholder.svg?height=400&width=500"
-                alt="India Repz Travel Services office"
-                className="rounded-lg shadow-xl"
-              />
+           <TravelSlideshow/>
             </div>
           </div>
         </div>
@@ -141,7 +135,7 @@ export default function AboutPage() {
 
       {/* Operational Divisions */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Operational Divisions</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -239,7 +233,7 @@ export default function AboutPage() {
 
       {/* Representation Services */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Representation Services</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
@@ -278,8 +272,8 @@ export default function AboutPage() {
             could benefit from our travel management programs and representation services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Phone className="mr-2 h-5 w-5" />
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Phone className="mr-2 h-5 w-5 " />
               Call: +91-92222 67890
             </Button>
             <Button size="lg" variant="outline">
