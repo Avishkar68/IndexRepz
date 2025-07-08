@@ -11,24 +11,24 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm  sticky top-0 z-50">
+     <header className="bg-white shadow-sm  sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+            <Link className="flex items-center space-x-2 cursor-pointer" to="/">
               <Globe className="h-8 w-8 text-blue-600" />
               <h1 className="text-2xl font-bold text-gray-900">India Repz Travel</h1>
-            </div>
+            </Link>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link to="#home" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="/" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Home
               </Link>
-              <Link to="#services" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Services
               </Link>
-              <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="about" className="text-gray-600 hover:text-blue-600 transition-colors">
                 About Us
               </Link>
-              <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link to="contact" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -37,11 +37,12 @@ const ContactPage = () => {
                 <Phone className="h-4 w-4 text-blue-600" />
                 <span className="text-gray-600">+91-92222 67890</span>
               </div>
-              <Button>Get Quote</Button>
+              <Button className="bg-black text-white">Get Quote</Button>
             </div>
           </div>
         </div>
       </header>
+
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
