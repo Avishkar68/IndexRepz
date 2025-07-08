@@ -1,45 +1,97 @@
 // src/pages/LandingPage.jsx
-import { Phone, Mail, MapPin, Plane, Hotel, Car, Ship, Globe, Users, Heart, Mountain, Building } from "lucide-react"
+import { Phone, Mail, MapPin, Plane, Hotel, Car, Ship, Globe, Users, Heart, Mountain, Building, Menu } from "lucide-react"
 import { Badge } from "../Components/ui/Badge"
-import { Card,CardContent, CardDescription, CardHeader, CardTitle } from "../Components/ui/Card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../Components/ui/Card"
 import { Button } from "../Components/ui/Button"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 export default function LandingPage() {
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-    <header className="bg-white shadow-sm  sticky top-0 z-50">
-           <div className="container mx-auto px-4 py-4">
-             <div className="flex items-center justify-between">
-               <Link className="flex items-center space-x-2 cursor-pointer" to="/">
-                 <Globe className="h-8 w-8 text-blue-600" />
-                 <h1 className="text-2xl font-bold text-gray-900">India Repz Travel</h1>
-               </Link>
-               <nav className="hidden md:flex items-center space-x-6">
-                 <Link to="/" className="text-gray-600 hover:text-blue-600 transition-colors">
-                   Home
-                 </Link>
-                 <Link to="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">
-                   Services
-                 </Link>
-                 <Link to="about" className="text-gray-600 hover:text-blue-600 transition-colors">
-                   About Us
-                 </Link>
-                 <Link to="contact" className="text-gray-600 hover:text-blue-600 transition-colors">
-                   Contact
-                 </Link>
-               </nav>
-               <div className="flex items-center space-x-4">
-                 <div className="hidden lg:flex items-center space-x-2 text-sm">
-                   <Phone className="h-4 w-4 text-blue-600" />
-                   <span className="text-gray-600">+91-92222 67890</span>
-                 </div>
-                 <Button className="bg-black text-white">Get Quote</Button>
-               </div>
-             </div>
-           </div>
-         </header>
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link className="flex items-center space-x-2 cursor-pointer" to="/">
+              <Globe className="h-8 w-8 text-blue-600" />
+              <h1 className="text-2xl font-bold text-gray-900">India Repz Travel</h1>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <Link to="/" className="text-gray-600 hover:text-blue-600 transition-colors">
+                Home
+              </Link>
+              <Link to="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">
+                Services
+              </Link>
+              <Link to="about" className="text-gray-600 hover:text-blue-600 transition-colors">
+                About Us
+              </Link>
+              <Link to="contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+                Contact
+              </Link>
+            </nav>
+
+            <div className="flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-2 text-sm">
+                <Phone className="h-4 w-4 text-blue-600" />
+                <span className="text-gray-600">+91-92222 67890</span>
+              </div>
+              <Button className="bg-black text-white">Get Quote</Button>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3">
+              <Link
+                to="/"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/#services"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link
+                to="about"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link
+                to="contact"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <div className="flex items-center px-3 py-2 space-x-2 text-sm">
+                <Phone className="h-4 w-4 text-blue-600" />
+                <span className="text-gray-600">+91-92222 67890</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section id="home" className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div className="container mx-auto px-4">
