@@ -9,7 +9,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <header className="bg-white shadow-sm  sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -35,7 +35,7 @@ export default function LandingPage() {
                 <Phone className="h-4 w-4 text-blue-600" />
                 <span className="text-gray-600">+91-92222 67890</span>
               </div>
-              <Button>Get Quote</Button>
+              <Button className="bg-black text-white">Get Quote</Button>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Comprehensive Travel Solutions</Badge>
+              <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 py-2 px-4 ">Comprehensive Travel Solutions</Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Welcome to India Repz
                 <span className="text-blue-600"> Travel Services</span>
@@ -56,7 +56,7 @@ export default function LandingPage() {
                 services for both leisure and business purposes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now: +91-92222 67890
                 </Button>
@@ -68,7 +68,7 @@ export default function LandingPage() {
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="https://t4.ftcdn.net/jpg/00/65/48/25/360_F_65482539_C0ZozE5gUjCafz7Xq98WB4dW6LAhqKfs.jpg"
                 alt="Travel destinations"
                 className="rounded-lg shadow-2xl"
               />
@@ -105,9 +105,9 @@ export default function LandingPage() {
               { icon: Heart, title: "Travel Insurance", color: "text-pink-600" },
               { icon: Users, title: "Tour Guides", color: "text-yellow-600" },
             ].map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
-                <CardContent className="p-6">
-                  <service.icon className={`h-8 w-8 mx-auto mb-3 ${service.color}`} />
+              <Card key={index} className="text-center border-none flex flex-col h-[100px] items-center justify-center hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="h-fit pb-0">
+                  <service.icon className={`h-8 w-8 mx-auto  ${service.color}`} />
                   <h3 className="font-medium text-sm text-gray-900">{service.title}</h3>
                 </CardContent>
               </Card>
@@ -230,27 +230,27 @@ export default function LandingPage() {
             <p className="text-gray-600">Connect with us and start planning your travel now...</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Phone className="h-10 w-10 text-blue-600 mx-auto mb-4" />
+            <Card className="text-center h-[180px] flex flex-col items-center justify-center">
+              <CardContent className="">
+                <Phone className="h-10 w-10 text-blue-600 mx-auto " />
                 <h3 className="font-semibold mb-2">Call Us</h3>
                 <p className="text-sm text-gray-600 mb-2">+91-92222 67890</p>
                 <p className="text-sm text-gray-600">+91-22-3190 7676/77</p>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Mail className="h-10 w-10 text-green-600 mx-auto mb-4" />
+            <Card className="text-center h-[180px] flex flex-col items-center justify-center">
+              <CardContent className="">
+                <Mail className="h-10 w-10 text-green-600 mx-auto " />
                 <h3 className="font-semibold mb-2">Email Us</h3>
                 <p className="text-sm text-gray-600">travel@indiarepz.com</p>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Users className="h-10 w-10 text-purple-600 mx-auto mb-4" />
+            <Card className="text-center h-[180px] flex flex-col items-center justify-center">
+              <CardContent className="">
+                <Users className="h-10 w-10 text-purple-600 mx-auto " />
                 <h3 className="font-semibold mb-2">Schedule Appointment</h3>
                 <p className="text-sm text-gray-600">Let us know your requirements</p>
-                <Button className="mt-3" size="sm">
+                <Button className="mt-3 bg-blue-600 text-white cursor-pointer" size="sm">
                   Contact Us
                 </Button>
               </CardContent>
